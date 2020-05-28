@@ -1,0 +1,202 @@
+button#btn-start {
+    width: 170px;
+    height: 55px;
+    background-color: transparent;
+    border-width: 5px;
+    position: relative;
+    border-style: solid;
+    background: #ffffff;
+    background-color: transparent;
+    background-clip: padding-box;
+    margin-top: 50px;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0; 
+        right: 0; 
+        bottom: 0;
+         left: 0;
+        z-index: -1;
+        margin: 0; 
+        border-radius: inherit; 
+        -webkit-text-fill-color: transparent;    
+      }
+      #{$link-hover-selector}{
+        // @include gradient(0deg, $list2);
+        background-color: rgb(152, 2, 2);
+    }
+    @include mq($phoneLandscape){
+        width: 300px;
+        height: 80px;
+        margin-top: 80px;
+       }
+       @include mq($tabletLandscape){
+        margin-top: 100px;
+       }
+       @include mq($desktopLarge){
+        margin-top: 150px;
+        width: 350px;
+        height: 100px;
+       }
+       
+}
+
+span.btn-text{
+    font-size: 2em;
+   @include gradient(-180deg, $list1);
+   background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(2px 4px 2px #000000);
+  @include mq($phoneLandscape){
+    font-size: 3em;
+   }
+   @include mq($tabletLandscape){
+    font-size: 3.5em;
+   }
+   @include mq($desktopLarge){
+    font-size: 4em;
+   }
+}
+
+//mission start-btn
+button.btn-mission-start{
+    display: block;
+    border-color: white;
+    width: 80%;
+    margin: 20px auto;
+    padding: 5px 20px;
+    background-color: rgba(177, 1, 1, 0.5);
+    #{$link-hover-selector}{
+       background:rgba(204, 0, 0, 0.8);
+    }
+    @include mq($tabletLandscape){
+        margin: 10px auto;
+        border-width: 3px;
+       }
+ @include mq($desktopLarge){
+       padding: 20px;
+ }
+}
+
+span.btn-text.btn-mission-text{
+  font-size: 1.5em;
+  -webkit-text-fill-color: white;
+  @include mq($phoneLandscape){
+    font-size: 2.3em;
+   }
+}
+
+button#btn-end-game{
+    display: block;
+    margin: 0 auto;
+    background-color: transparent;
+    border: 3px solid white;
+    padding: 5px 15px;
+   
+    #{$link-hover-selector}{
+        background:rgba(151, 150, 150, 0.5);
+     }
+    span.btn-text{
+        -webkit-text-fill-color: white; 
+        line-height: 1.2;
+        text-align: center;
+        padding: 0 10px;
+        display: block;
+        @include mq($phoneLandscape){
+            font-size: 2em;
+           }
+        @include mq($desktopSmall){
+            font-size: 3em;
+        }
+    }
+    @include mq($phoneLandscape){
+        border: 5px solid white;
+        
+       }
+       @include mq($desktopSmall){
+        padding: 10px 50px;
+    }
+}
+
+button.btn-play-again-popup{
+    display: block;
+    margin: 0 auto;
+    background-color: transparent;
+    border: 5px solid white;
+    padding: 10px 25px;
+    span.btn-text{
+        -webkit-text-fill-color: white; 
+        font-size: 2em;
+    }
+}
+button.btn-play-again-popup-sc{
+    box-shadow: 3px 3px 1px black ;
+    #{$link-hover-selector}{
+        background:rgba(243, 207, 152, 0.7);
+     }
+    span.btn-text{
+        text-shadow: 3px 3px 1px black;
+    }
+}
+button.btn-play-again-popup-fail{
+    border-width: 5px;
+    position: relative;
+    border-style: solid;
+    // background: #ffffff;
+    background-color: black;
+    border-color: transparent;
+    background-clip: padding-box;
+    &::before{
+        content: "";
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        bottom: -5px;
+        left: -5px;
+        z-index: -1;
+        margin: 0; 
+        @include  gradient(0deg, $stripe); 
+        background-size: 4px 4px; 
+        -webkit-text-fill-color: transparent;    
+      }
+      #{$link-hover-selector}{
+        background:rgba(32, 32, 32, 0.9);
+     }
+    span.btn-text{
+        @include gradient(0deg, $stripe);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 4px 4px; 
+        #{$link-hover-selector}{
+            // -webkit-background-clip: text;
+            -webkit-text-fill-color:red;
+          }
+    }
+   
+}
+
+.btn-audio-mute {
+    font-size: 1em;
+    background: none;
+    border: none;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 20px;
+    .btn-image {
+        padding-right: 20px;
+        img.icon-image-audio-on-off {
+            height: 40px;
+        }  
+    }   
+    p.audio-text {
+        color: white;
+        line-height: 40px;
+    }   
+}

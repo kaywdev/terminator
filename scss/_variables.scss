@@ -1,0 +1,53 @@
+// Variables
+
+/* COLOR VARIABLES
+============================================= */
+$silver1: #8b8b8b;
+$white: #ffffff;
+$light-silver: #dedede;
+$silver2: #454545;
+$silver3: #a1a1a1;
+$d-grey:rgba(9,9,9,1);
+$white2: rgba(243,246,246,1);
+$d-gre2:rgba(14,14,14,1);
+$st-red: #ff0000;
+$st-black: #000000;
+
+
+/* GRADIENT LISTS
+============================================= */
+
+$list1: $silver1 0%, $white 16%, $light-silver 21%, $white 24%, $silver2 27%, $light-silver 36%, $white 45%, $white 60%, $light-silver 72%, $white 80%, $light-silver 84%, $silver3 100%; 
+$list2:$d-grey 0%, $white2 52%, $d-gre2 100%;
+$stripe:$st-red 37.5%, $st-black 37.5%, $st-black 50%, $st-red 50%, $st-red 87.5%, $st-black 87.5%, $st-black 100%;
+
+
+// Font Variables
+$body-font: 'Terminator2' , sans-serif;
+$opening-font: 'Terminator NFI', sans-serif;
+
+
+
+// Utility variables
+$link-hover-selector: '&:hover, &:focus, &:active';
+
+// Animation Variables
+$page-transition: transform 1.2s ease-out;
+
+// Function to
+// Convert Px to Ems
+@function em($px, $bc: 16){
+    @return #{$px/$bc}em; 
+}
+
+// Media Query Breakpoints
+$desktopLarge:em(1920);
+$desktopMedium: em(1250);
+$desktopSmall: em(1125);
+$tabletLandscape: em(1024);
+$tabletPortrait: em(850);
+$phoneLandscape: em(670);
+
+//audiowaring page  animation
+$audio-warning-fade-out-time: 2000;
+$audio-warning-fade-out-time-in-seconds: ($audio-warning-fade-out-time / 1000) * 1s;

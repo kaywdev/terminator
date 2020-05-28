@@ -1,0 +1,78 @@
+/* game-board styling */
+  .game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 254px;
+    margin: 10px auto;
+
+    @include mq($phoneLandscape){
+      max-width: 390px;
+     }
+   @include mq($tabletLandscape){
+    box-shadow: 0px 0px 5px 5px rgba(255, 255, 255, 0.7);
+    max-width: 450px;
+    height: 450px;
+    padding: 0;
+    margin: 0;
+   }
+   @include mq($desktopSmall){
+    max-width: 540px;
+    height: 540px;
+    padding: 0;
+   }
+   
+    .card{
+        border: 2px solid #ffffff;
+        box-shadow: 5px 5px 5px rgba(255, 255, 255, .7);
+        width: 85px;
+        height: 85px;
+        overflow: hidden;
+
+        @include mq($phoneLandscape){
+          width: 130px;
+          height: 130px;
+         }
+
+        @include mq($tabletLandscape){
+          width: 150px;
+          height: 150px;
+         }
+         @include mq($desktopSmall){
+          width: 180px;
+          height: 180px;
+         }
+       .card-image{
+        position: relative;
+        height: 100%;
+        top:100%;
+        transition: all 0.4s;
+        
+        &.target{
+          animation: showImage 0.2s linear;
+          top: 0;
+  
+          @keyframes showImage {
+            0% {
+              top: 100%;
+            }
+            100% {
+              top: 0;
+            }
+          }
+       }
+      
+    
+      }
+      
+      
+    }
+    .card:not(:nth-child(3n)){
+      border-right: 0px;
+    }
+    .card-01, .card-02, .card-03,
+    .card-04, .card-05, .card-06{
+      border-bottom: 0px;
+    }
+    
+}
+  

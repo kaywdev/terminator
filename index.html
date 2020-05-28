@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Terminator Game</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/logos/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/logos/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/logos/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/logos/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="images/logos/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/logos/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="images/logos/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/logos/apple-touch-icon-152x152.png" />
+<link rel="icon" type="image/png" href="images/logos/favicon-196x196.png" sizes="196x196" />
+<link rel="icon" type="image/png" href="images/logos/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="images/logos/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="images/logos/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="images/logos/favicon-128.png" sizes="128x128" />
+<meta name="application-name" content="&nbsp;"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+<meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+<meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+</head>
+<body>
+    <div class="audio-warning-pop-up" id="audio-warning-pop-up">
+    <div class="audio-warning-pop-up-content" id="audio-warning-pop-up-content">
+        <div class="pop-up-text audio-warning-pop-up-text">
+            <h2>Warning</h2>
+            <p>This game plays music and sound effects. Please choose to either enable or disable all music and sound effects.</p>
+        </div>
+        <div class="enable-or-disable-sounds">
+            <h2>Enable or Disable Sounds</h2>
+            <button class="btn btn-enable-or-disable-sound btn-enable-sound" id="btn-enable-sound">
+                    <span class="btn-text">Enable Sound</span>
+            </button>
+            <button class="btn btn-enable-or-disable-sound btn-disable-sound" id="btn-disable-sound">
+                    <span class="btn-text">Disable Sound</span>
+            </button>
+        </div>
+    </div>
+</div>
+    <div class="title-screen" id="title-screen">
+        <div class="mute-audio-control mute-audio-control-title-screen">
+            <button class="btn-audio-mute" id="btn-audio-mute-title-screen" data-mute="true">
+                <span class="btn-image">
+                    <img src="images/audio/icon-audio-off.png" alt="Audio muted" class="icon-image-audio-on-off">
+                </span>
+                <p class="audio-text">Mute</p>
+            </button>
+        </div>
+        <div class="title-box" id="title-box">
+            <picture>
+            <source srcset="./images/opening/t-800-mobile.jpg" media="(max-width: 768px)" >
+            <source srcset="./images/opening/t-800.jpg" media="(min-width: 769px)" >
+            <img src="./images/opening/t-800.jpg" alt="T-800">
+        </picture>
+            <div class="title-text-wrapper">
+            <div class="opening-title-wrapper"><h1>Wrack<br> a <br>Terminator</h1></div>
+            <button id="btn-start"
+                    class="btn btn-start">
+                <span class="btn-text">Start</span>
+            </button>
+             </div>
+             <!--end of title-text-wrapper-->
+             <picture>
+                <source srcset="images/opening/t-800raw-mobile.jpg" media="(max-width: 768px)" >
+                <source srcset="images/opening/t-800raw.jpg" media="(min-width: 769px)" >
+                <img src="images/opening/t-800raw.jpg" alt="T-800-raw">
+             </picture>
+        </div> <!--end of title-box-->
+    </div>
+    <!--end of title-screen-->
+    <div class="game-screen" id="game-screen">
+        <div class="title-bar">
+            <h2>Wrack a terminator</h2>
+            <div class="mute-audio-control mute-audio-control-title-screen">
+                <button class="btn-audio-mute" id="btn-audio-mute-game-screen" data-mute="true">
+                    <span class="btn-image">
+                        <img src="images/audio/icon-audio-off.png" alt="Audio muted" class="icon-image-audio-on-off">
+                    </span>
+                    <p class="audio-text">Mute</p>
+                </button>
+            </div>
+        <div class="game-timer">
+            <span>
+                Time:
+            </span>
+            <span id="time-count"
+                      class="time-count">
+                      20
+                </span>
+        </div>
+        </div>
+        <!-- end title bar -->
+        <div class="game-stats">
+            <div class="turns">
+                <span>
+                    Score: 
+                </span>
+                <span id="score"
+                      class="score">
+                      0
+                </span>
+            </div><!-- end turns -->
+            <div class="matches">
+                <span>
+                    Missed: 
+                </span>
+                <span id="missed"
+                      class="missed">
+                    0
+                </span>
+            </div><!-- end matches -->
+        </div><!-- end game stats -->
+
+        <div class="game-board-container">
+                <div class="game-mission">
+                    <h2>Mission:</h2>
+                    <div class="mission-container">
+                    <div class="mission-text-wrapper">
+                    <p>Destroy terminators except for...</p>
+                     <img src="./images/game-moles/terminator4.jpg" alt="T-800 from T2">
+                    </div><!--end of mission-text-wrapper-->
+                    <div class="mission-start-wrapper">
+                     <p>Come with me if you want to live...</p>
+                     <button id="btn-game-start" class="btn btn-mission-start">
+                    <span class="btn-text btn-mission-text">Game Start</span>
+                    </button>
+                    </div><!--end of mission-start-wrapper-->
+                </div><!--end of mission-container-->
+                </div>
+                <!--end of game-mission-->
+                <div class="game-board">
+                    <div class="card card-01">
+                        <div class="card-image">
+                         <!-- <img src="images/game-moles/terminator1.jpg" alt="terminator1"> -->
+                         </div><!-- end card-image -->
+                    </div><!--end card -->
+                    <div class="card card-02">
+                        <div class="card-image">
+                            <!-- <img src="images/game-moles/terminator1.jpg" alt="terminator1"> -->
+                            </div><!-- end card-image -->
+                    </div><!--end card -->
+                    <div class="card card-03">
+                        <div class="card-image">
+                            <!-- <img src="images/game-moles/terminator1.jpg" alt="terminator1"> -->
+                            </div><!-- end card-image -->
+                    </div><!--end card -->
+                    <div class="card card-04">
+                        <div class="card-image">
+                            <!-- <img src="images/game-moles/terminator1.jpg" alt="terminator1"> -->
+                            </div><!-- end card-image -->
+                    </div><!--end card -->
+                    <div class="card card-05">
+                        <div class="card-image">
+                            <!-- <img src="images/game-moles/terminator1.jpg" alt="terminator1"> -->
+                            </div><!-- end card-image -->
+                    </div><!--end card -->
+                    <div class="card card-06">
+                        <div class="card-image">
+                            <!-- <img src="images/game-moles/terminator1.jpg" alt="terminator1"> -->
+                            </div><!-- end card-image -->
+                    </div><!--end card -->
+                    <div class="card card-07">
+                        <div class="card-image">
+                            <!-- <img src="images/game-moles/terminator1.jpg" alt="terminator1"> -->
+                            </div><!-- end card-image -->
+                    </div><!--end card -->
+                    <div class="card card-08">
+                        <div class="card-image">
+                            <!-- <img src="images/game-moles/terminator1.jpg" alt="terminator1"> -->
+                            </div><!-- end card-image -->
+                        <!-- end card-image -->
+                    </div><!--end card -->
+                    <div class="card card-09">
+                        <div class="card-image">
+                            <!-- <img src="images/game-moles/terminator1.jpg" alt="terminator1"> -->
+                            </div><!-- end card-image -->
+                    </div><!--end card -->
+                
+                </div><!-- end game-board -->
+
+                <div class="end-game-btn-container">
+                            <button class="btn btn-end-game"
+                                    id="btn-end-game">
+                                    <span class="btn-text">End Game</span>
+                            </button>
+                        </div><!-- end end-game-btn-container -->
+                </div><!-- end game-screen -->
+
+</div><!--end of game-board-container-->
+<!-- End Game Pop Up Box -->
+<div class="end-game-pop-up end-game-pop-up-win" id="end-game-pop-up-win">
+        <div class="end-game-pop-up-content end-game-pop-up-content-win">
+            <div class="pop-up-text">
+                <h1>Mission Completed</h1>
+                <h2>Congratulation</h2>
+            </div>
+            <div class="pop-up-image">
+                    <video id="video-win" width="600" height="300" autoplay loop>
+                            <source src="images/movie/t2-end.mp4" type="video/mp4">
+                            <source src="images/movie/t2-end.ogg" type="video/ogg">
+                            Your browser does not support the video tag.
+                     </video>
+            </div>
+            <div class="play-again">
+                <p>Play Again?</p>
+                <div class="btn-play-again-wrapper">
+                <button class="btn btn-play-again btn-play-again-popup btn-play-again-popup-sc btn-play-again-yes"  id = "win-yes">
+                        <span class="btn-text">Yes</span>
+                </button>
+                <button class="btn btn-play-again btn-play-again-popup btn-play-again-popup-sc btn-play-again-no" id = "win-no">
+                        <span class="btn-text">No</span>
+                </button>
+                </div>
+                 <!--end of btn-play-again-wrapper-->
+            </div>
+             <!--end of play-again-->
+        </div>
+        <!--end of end-game-pop-up-content -->
+    </div>
+    <div class="end-game-pop-up end-game-pop-up-lose" id="end-game-pop-up-lose">
+        <div class="end-game-pop-up-content end-game-pop-up-content-lose">
+            <div class="pop-up-text">
+                <h1>Mission Failed</h1>
+                <h2>You are terminated</h2>
+            </div>
+            <div class="pop-up-image">
+                    <video  id="video-lose" width="600" height="300" autoplay loop>
+                            <source src="images/movie/terminator-shoot.mp4" type="video/mp4">
+                            <source src="images/movie/terminator-shoot.mp4.ogg" type="video/ogg">
+                            Your browser does not support the video tag.
+                     </video>
+            </div>
+            <div class="lose-line"></div>
+            <div class="play-again">
+                <p>Play Again?</p>
+                <div class="btn-play-again-wrapper">
+                <button class="btn btn-play-again btn-play-again-popup btn-play-again-popup-fail  btn-play-again-yes"  id = "lose-yes">
+                    <span class="btn-text">Yes</span>
+                </button>
+                <button class="btn btn-play-again btn-play-again-popup btn-play-again-popup-fail btn-play-again-no" id = "lose-no">
+                        <span class="btn-text">No</span>
+                </button>
+            </div>
+            <!--end of btn-play-again-wrapper-->
+            </div> 
+            <!--end of play-again-->
+        </div>
+        <!--end of end-game-pop-up-content -->
+    </div>
+    <!--end of end-game-pop-up -->
+    <!-- Game Music -->
+    <audio data-key='music-opening' src="media/music/maintheme1.mp3"loop></audio>
+    <audio data-key='music-game' src="media/music/chase.mp3"></audio>
+    <audio data-key='music-end-game-lose' src="media/music/game-lose.mp3" loop></audio>
+    <audio data-key='music-end-game-win' src="media/music/game-win.mp3" loop></audio>
+    <audio data-key='game-start' src="media/sfx/gamestart.mp3"></audio>
+    <audio data-key='come-with-me' src="media/sfx/come-with-me.mp3"></audio>
+    <audio data-key='gunshot' src="media/sfx/gunshot.mp3"></audio>
+    <audio data-key='hasta' src="media/sfx/hastalavista.mp3"></audio>
+    <audio data-key='ill-be-back' src="media/sfx/Ill-be-back.mp3"></audio>
+    <audio data-key='terminated' src="media/sfx/t3_terminated.mp3"></audio>
+    <audio data-key='no-hit' src="media/sfx/scream.mp3"></audio>
+    <audio data-key='negative' src="media/sfx/negative.mp3"></audio>
+
+    
+    <script src="scripts/script.js?v=2"></script>
+    <script src="scripts/jquery-3.4.1.min.js"></script>
+</body>
+</html>

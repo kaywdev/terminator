@@ -1,0 +1,20 @@
+/* Typography */
+@font-face {
+    font-family: 'Terminator NFI';
+    font-style: normal;
+    font-weight: normal;
+    src:url('../font/terminator real nfi.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Terminator2';
+    font-style: normal;
+    font-weight: normal;
+    src:url('../font/TERMINAT.TTF') format('truetype');
+}
+
+h1, h2, h3, p, span, .btn-text {
+    font-family:$body-font;
+    text-transform:uppercase ;
+    margin: 0; 
+}

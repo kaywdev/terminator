@@ -1,0 +1,125 @@
+.game-screen{
+   display:none;
+   position: relative;
+   &.show{
+    width: 100%;
+    height: 100vh;
+    min-width: 100%;
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 10% 8% 1fr;
+    color:white;
+    position: relative;
+    &::before{
+    background-image: url(../images/game-board/background.jpg);
+    background-size: cover;
+    content: "";
+    display:block;
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -2;
+    }
+    &::after {
+        background-color: black;
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.5;
+        }
+        
+    /* game title area styling */
+   .title-bar{
+    padding: 3em 10px 0 10px;
+    display: grid;
+    grid-template-columns: 45% 1fr 45%;
+    @include mq($phoneLandscape){
+        align-items: center;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 4em 4em;
+       }
+        @include mq($tabletLandscape){
+            padding: 2em 4em;
+        }
+        h2{
+            font-size: 1.2em;
+            @include mq($phoneLandscape){
+                font-size: 1.5em;
+               }
+               @include mq($tabletLandscape){
+                font-size: 2em;
+            }
+          }
+      }
+    .game-timer {
+        justify-self: center;
+        font-size: 1.2em;
+        align-self: center;
+        @include mq($phoneLandscape){
+            font-size: 1.5em;
+           }
+           @include mq($tabletLandscape){
+            font-size: 2em;
+        }
+        span{
+        text-shadow: 1px 2px rgba(0, 0, 0, .5);
+        }
+    }
+    /* game starts area styling */
+    .game-stats{
+        display: flex;
+        justify-content: space-between;
+        padding: 2em 10px;
+        font-size: 1em;
+        @include mq($phoneLandscape){
+            width: 500px;
+            margin: 0 auto;
+            font-size: 1.2em;
+            padding: 2em 0;
+           }
+           @include mq($desktopSmall){
+            width: 550px;
+            font-size: 1.5em;
+           }
+    }
+
+    /* game-board-area styling */
+        .game-board-container{
+            padding-top: 10px;
+            @include mq($tabletLandscape){
+                display: grid;
+                grid-template-columns: 35% 1fr 20%;
+                
+                justify-items: center;
+                padding-top: 30px;
+               }
+            @include mq($desktopSmall){
+                grid-template-columns: 1fr 600px 1fr;
+            }
+            @include mq($desktopLarge){
+                grid-template-columns: 1fr 800px 1fr;
+                height: 575px;
+                align-items: center;
+            }
+        }
+
+        .end-game-btn-container {
+            align-self: end;
+            margin-bottom: 50px;
+            @include mq($desktopSmall){
+                margin-bottom: 100px;
+                max-width: 300px;
+            }
+            @include mq($desktopLarge){
+                margin: 0;
+            }
+        }
+        }
+}
