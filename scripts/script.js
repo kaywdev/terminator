@@ -20,6 +20,8 @@ const btnMuteAudioOp = document.getElementById('btn-audio-mute-title-screen');
 const btnMuteAudioGs = document.getElementById('btn-audio-mute-game-screen');
 const muteAudioIcon = document.getElementsByClassName('icon-image-audio-on-off');
 const muteDisplay = document.getElementsByClassName('audio-text');
+const muteAudioIconGs = document.getElementById('icon-image-audio-on-off-Gs');
+const muteDisplayGs = document.getElementById('audio-text-Gs');
 const enableSoundBtn = document.getElementById('btn-enable-sound');
 const disableSoundBtn = document.getElementById('btn-disable-sound');
 const audioWarningPopUp = document.getElementById('audio-warning-pop-up');
@@ -282,7 +284,7 @@ btnMuteAudioOp.addEventListener('click', ()=>{
 
 btnMuteAudioGs .addEventListener('click', ()=>{
     muteAudio();
-    setMuteAudioBtns();
+    setMuteAudioBtnsGs();
 });
 // resets the app back to initial state
 function reset(){
@@ -296,6 +298,18 @@ function setMuteAudioBtns(){
     }else{
         muteDisplay[0].innerHTML= "Mute";
         muteAudioIcon[0].setAttribute('src', 'images/audio/icon-audio-off.png',);
+    }
+    
+}
+
+//Set Mute Audio function for game page
+function setMuteAudioBtnsGs(){
+    if(silence){
+        muteDisplayGs.innerHTML= "Play Audio";
+        muteAudioIconGs.setAttribute('src', 'images/audio/icon-audio-on.png',);
+    }else{
+        muteDisplayGs.innerHTML= "Mute";
+        muteAudioIconGs.setAttribute('src', 'images/audio/icon-audio-off.png',);
     }
     
 }
