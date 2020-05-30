@@ -121,7 +121,7 @@ function randomCard(cards){
 
     const card = cards[idx];
     if(card === lastCard){
-        console.log('the same one is showing');
+        // console.log('the same one is showing');
         return randomCard(cards);
     }
     lastCard = card;
