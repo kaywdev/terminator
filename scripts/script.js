@@ -210,16 +210,16 @@ function evalBox(){
     if (this.firstElementChild.classList.contains('friend')){
         negative.play();
          //if user click terminator4.jpg , counting up missed
-        missDisplay.innerHTML = ++miss
+        missDisplay.innerHTML = ++miss;
        
       this.firstElementChild.classList.remove('friend')
     }else if(this.firstElementChild.classList.contains('enemy')){
         gunShot.play();
         //if user click the img, counting up the score
-        score.innerHTML = ++hit
+        score.innerHTML = ++hit;
         this.firstElementChild.classList.remove('enemy');
     } else{
-      missShot.play()
+      missShot.play();
      
     }
   }
