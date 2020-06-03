@@ -18,10 +18,8 @@ const loseNoBtn = document.getElementById('lose-no');
 const endGameBtn = document.getElementById('btn-end-game');
 const btnMuteAudioOp = document.getElementById('btn-audio-mute-title-screen');
 const btnMuteAudioGs = document.getElementById('btn-audio-mute-game-screen');
-const muteAudioIcon = document.getElementsByClassName('icon-image-audio-on-off');
-const muteDisplay = document.getElementsByClassName('audio-text');
-const muteAudioIconGs = document.getElementById('icon-image-audio-on-off-Gs');
-const muteDisplayGs = document.getElementById('audio-text-Gs');
+const muteAudioIcon = document.querySelectorAll('.icon-image-audio-on-off');
+const muteDisplay = document.querySelectorAll('p.audio-text');
 const enableSoundBtn = document.getElementById('btn-enable-sound');
 const disableSoundBtn = document.getElementById('btn-disable-sound');
 const audioWarningPopUp = document.getElementById('audio-warning-pop-up');
@@ -282,7 +280,7 @@ btnMuteAudioOp.addEventListener('click', ()=>{
     setMuteAudioBtns();
 });
 
-btnMuteAudioGs .addEventListener('click', ()=>{
+btnMuteAudioGs.addEventListener('click', ()=>{
     muteAudio();
     setMuteAudioBtnsGs();
 });
@@ -305,11 +303,11 @@ function setMuteAudioBtns(){
 //Set Mute Audio function for game page
 function setMuteAudioBtnsGs(){
     if(silence){
-        muteDisplayGs.innerHTML= "Play Audio";
-        muteAudioIconGs.setAttribute('src', 'images/audio/icon-audio-on.png',);
+        muteDisplay[1].innerHTML= "Play Audio";
+        muteAudioIcon[1].setAttribute('src', 'images/audio/icon-audio-on.png',);
     }else{
-        muteDisplayGs.innerHTML= "Mute";
-        muteAudioIconGs.setAttribute('src', 'images/audio/icon-audio-off.png',);
+        muteDisplay[1].innerHTML= "Mute";
+        muteAudioIcon[1].setAttribute('src', 'images/audio/icon-audio-off.png',);
     }
     
 }
